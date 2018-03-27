@@ -24,21 +24,6 @@ image annotation app
      `./manage.py export db`
 
 
-
-### Manage db with [picpac](https://github.com/aaalgo/picpac)
-
-##### Merge db
-   `picpac-merge output input1 input2 input3 ...`
-
-##### Split db
-
-   `picpac-kfold --split 10 --stratify 1 --max-test 500 input output`   
-   This will split all data into 10 parts, using one part for testing.  If test image exeeds 500 it will use only 500 for testing and put the rest in training. "output.train" and "output.test" will be generated as training and validation db.
-
-##### View db and annotation
-
-   `picpac-explorer db`  
-   View database at port 18888.  
-   Go to "stream" channel, choose "Json" for "annotation", then "Reload" data
-
-
+#### Dumping bounding box
+1. ./dump.py >dumped_out_annotation.txt
+2. Column1 : image, Column 4: x, Column 6: y, Column 8: height, Column 10: width
